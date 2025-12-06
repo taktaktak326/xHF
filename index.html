@@ -581,6 +581,40 @@
       border-radius: var(--radius-lg);
     }
 
+    .qa-card-close {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      border: none;
+      background: #ffffff;
+      color: #0f172a;
+      border-radius: 999px;
+      width: 28px;
+      height: 28px;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      font-weight: 800;
+      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.16);
+      cursor: pointer;
+      z-index: 5;
+    }
+    .qa-card-close:hover {
+      color: var(--primary-dark);
+      transform: translateY(-1px);
+      box-shadow: 0 10px 22px rgba(0, 0, 0, 0.2);
+    }
+    .qa-card.is-focused .qa-card-close {
+      display: inline-flex;
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      transform: rotateY(180deg);
+      transform-origin: center;
+      z-index: 20;
+    }
+
     .qa-card-face {
       position: absolute;
       inset: 0;
@@ -923,7 +957,8 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      width: clamp(320px, 98vw, 720px);
+      width: min(100%, 720px);
+      max-width: 100vw;
     }
 
     .qa-media a.img-link {
@@ -1148,8 +1183,9 @@
                 </li>
 </ul>
 <div class="qa-media">
-<img alt="土質（砂地、粘土質など）によって土壌改良の方法は変わりますか？特別な資材が必要ですか？" src="img/H1土質（砂地、粘土質など）によって土壌改良の方法は変わりますか？特別な資材が必要ですか？.png"/>
-</div></div>
+<img alt="土質（砂地、粘土質など）によって土壌改良の方法は変わりますか？特別な資材が必要ですか？" src="img/H1土質（砂地、粘土質など）によって土壌改良の方法は変わりますか？特別な資材が必要ですか？.png"/>
+</div>
+</div>
 </details>
 <details class="qa-item" id="h2">
 <summary class="qa-summary">
@@ -1166,8 +1202,9 @@
 <li>ヒマワリ・ダイコン・マメ科など多様な緑肥（カクテルカバークロップ）を入れると微生物の多様性が高まり、病気が出にくく連作障害も起きにくい健全土壌になります。</li>
 </ul>
 <div class="qa-media">
-<img alt="土壌のバランスを整えれば、同じ作物を連作しても大丈夫ですか？" src="img/H2土壌のバランスを整えれば、同じ作物を連作しても大丈夫ですか？.png"/>
-</div></div>
+<img alt="土壌のバランスを整えれば、同じ作物を連作しても大丈夫ですか？" src="img/H2土壌のバランスを整えれば、同じ作物を連作しても大丈夫ですか？.png"/>
+</div>
+</div>
 </details>
 <details class="qa-item" id="h3">
 <summary class="qa-summary">
@@ -2541,7 +2578,7 @@
                     ※補償率の詳細（目標未達時にどの程度返金・補償するか）は、<strong>別途保証規約で定めます。</strong>
 </p>
 <div class="qa-media">
-<img alt="基準収量がすでに高い圃場でも、必ず「+10%」を目標収量にできますか？ .png" src="img/q32-high-target-yield.png"/>
+<img alt="基準収量がすでに高い圃場でも、必ず「+10%」を目標収量にできますか？" src="img/q32-high-target-yield.png"/>
 </div></div>
 </details>
 <details class="qa-item" id="q33">
@@ -2814,7 +2851,7 @@
                     科学的エビデンスとAIを基盤に再現性を追求する「技術導入加速装置」と位置づけており、単なる補償制度ではなく、成功確率を高める運用設計をセットにしています。
                   </p>
 <div class="qa-media">
-<img alt="収量保証サービスとはどのようなサービスですか？" src="img/Q40収量保証サービスとはどのようなサービスですか？.png"/>
+<img alt="収量保証サービスとはどのようなサービスですか？" src="img/1. 収量保証サービスとはどのようなサービスですか？.png"/>
 </div>
 </div>
 </details>
@@ -2835,7 +2872,7 @@
 <li><strong>科学的な対話ができること</strong>：栽培意図やリスク（例：窒素飢餓）を理解し、想定外の結果も落ち着いて協議できるパートナーであること。</li>
 </ul>
 <div class="qa-media">
-<img alt="収量保証サービスを利用するための条件は何ですか？" src="img/Q41収量保証サービスを利用するための条件は何ですか？.png"/>
+<img alt="収量保証サービスを利用するための条件は何ですか？" src="img/収量保証サービスを利用するための条件は何ですか？.png"/>
 </div>
 </div>
 </details>
@@ -2906,7 +2943,7 @@
                     新技術の社会実装を後押しする「導入加速装置」として機能し、作付分散提案などで生産者と運営側の双方に効率改善メリットを提供します。
                   </p>
 <div class="qa-media">
-<img alt="収量保証サービスのメリットは何ですか？" src="img/Q45収量保証サービスのメリットは何ですか？.png"/>
+<img alt="収量保証サービスのメリットは何ですか？" src="img/Q45収量保証サービスのメリットは何ですか？.png"/>
 </div></div>
 </details>
 <details class="qa-item" id="q46">
@@ -3094,6 +3131,7 @@
             card.dataset.searchableText = searchableText;
             card.innerHTML = `
               <div class="qa-card-inner">
+                <button class="qa-card-close" type="button" aria-label="閉じる">×</button>
                 <div class="qa-card-face qa-card-front">
                   <span class="qa-card-tag">${tag}</span>
                   <div class="qa-card-question">${question}</div>
@@ -3115,6 +3153,11 @@
               }
               e.stopPropagation();
               focusCard(card);
+            });
+            const closeBtn = card.querySelector(".qa-card-close");
+            closeBtn?.addEventListener("click", (e) => {
+              e.stopPropagation();
+              exitFocus();
             });
             grid.appendChild(card);
           });
@@ -3177,6 +3220,8 @@
       document.addEventListener("click", (e) => {
         if (!overlay?.classList.contains("is-active")) return;
         const target = e.target;
+        const inLightbox = target instanceof Element && lightbox?.contains(target);
+        if (lightbox?.classList.contains("is-active") || inLightbox) return;
         if (focusPortal?.contains(target)) return;
         exitFocus();
       });
@@ -3285,7 +3330,6 @@
 
       const openLightbox = (src, alt) => {
         if (!lightbox || !lightboxImg) return;
-        exitFocus();
         lightboxImg.src = src;
         lightboxImg.alt = alt || "";
         lightbox.classList.add("is-active");
@@ -3303,7 +3347,9 @@
         lightbox.setAttribute("aria-hidden", "true");
         lightboxImg.src = "";
         lightboxImg.alt = "";
-        document.body.classList.remove("no-scroll");
+        // もしカードフォーカス中なら no-scroll は維持
+        const focusActive = overlay?.classList.contains("is-active");
+        if (!focusActive) document.body.classList.remove("no-scroll");
       };
 
       // imgクリックをキャプチャ段階で拾い、確実にライトボックスを開く
@@ -3370,8 +3416,16 @@
       });
 
       window.addEventListener("keydown", (e) => {
-        if (e.key === "Escape") closeLightbox();
-        if (e.key === "Escape") exitFocus();
+        if (e.key === "Escape") {
+          if (lightbox?.classList.contains("is-active")) {
+            closeLightbox();
+            return;
+          }
+          if (overlay?.classList.contains("is-active")) {
+            exitFocus();
+            return;
+          }
+        }
         if (!lightbox || !lightbox.classList.contains("is-active")) return;
         if (e.key === "+" || (e.ctrlKey && e.key === "=")) {
           e.preventDefault();
